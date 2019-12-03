@@ -1,0 +1,15 @@
+async function startProgram() {
+	for (var _i0 = 0; _i0 < 5; ++_i0) {
+		setSpeed(100);
+		await spin(360, 5.2);
+		stopRoll();
+		setSpeed(100);
+		await spin(-360, 5.1);
+		stopRoll();
+		await delay(0.025);
+	}
+	await speak('I am the winner!', true);
+	await strobe({ r: 255, g: 3, b: 0 }, 0.5, 1);
+	await strobe({ r: 51, g: 255, b: 0 }, 0.5, 1);
+	await strobe({ r: 0, g: 53, b: 255 }, 0.5, 1);
+}
